@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            background-color: #fcbb7a; /* Color de fondo preferido */
+            background-color: #fcbb7a; /* Color de fondo  */
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: relative; /* Añadido para posicionar el área secreta */
+            position: relative; 
         }
 
         .container {
@@ -88,7 +88,9 @@
 </head>
 <body>
     <div class="container text-center">
-        <i class="fas fa-cannabis fa-3x mb-3" style="color: #e44d26;"></i>
+        <a href="/admin/pedidos">
+            <i class="fas fa-cannabis fa-3x mb-3" style="color: #e44d26;"></i>
+        </a>
         <h1>Bienvenido a DeepHaze</h1>
         <a href="/pedir" class="btn btn-primary btn-lg">
             <i class="fas fa-shopping-cart mr-2"></i> Hacer Pedido
@@ -96,7 +98,18 @@
     </div>
 
     <!-- Área secreta clickable -->
-    <div id="secret-area" onclick="window.location.href='/admin/pedidos'"></div>
+    <div id="secret-area" onclick="solicitarClave()"></div>
+
+    <script>
+    function solicitarClave() {
+        const clave = prompt("🔒 Ingrese la clave de administrador:");
+        if (clave === "1414") {
+            window.location.href = '/admin/pedidos';
+        } else {
+            alert("❌ Clave incorrecta");
+        }
+    }
+    </script>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

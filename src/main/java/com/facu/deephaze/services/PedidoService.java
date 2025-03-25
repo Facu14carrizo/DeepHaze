@@ -10,26 +10,26 @@ import java.util.List;
 @Service
 public class PedidoService {
 
-    @Autowired
-    private PedidoRepository pedidoRepository;
+    private final PedidoRepository pedidoRepository;
 
-    // Método para guardar o actualizar un pedido
-    public void guardarPedido(Pedido pedido) {
-        pedidoRepository.save(pedido); // Guarda el pedido (crea o actualiza)
+    @Autowired
+    public PedidoService(PedidoRepository pedidoRepository) {
+        this.pedidoRepository = pedidoRepository;
     }
 
-    // Método para obtener todos los pedidos
     public List<Pedido> obtenerTodosLosPedidos() {
         return pedidoRepository.findAll();
     }
 
-    // Método para obtener un pedido por su ID
     public Pedido obtenerPedidoPorId(Long id) {
-        return pedidoRepository.findById(id).orElse(null); // Retorna el pedido o null si no se encuentra
+        return pedidoRepository.findById(id).orElse(null);
     }
 
-    // Método para eliminar un pedido por su ID
+    public void guardarPedido(Pedido pedido) {
+        pedidoRepository.save(pedido);
+    }
+
     public void eliminarPedido(Long id) {
-        pedidoRepository.deleteById(id); // Elimina el pedido por ID
+        pedidoRepository.deleteById(id);
     }
 }

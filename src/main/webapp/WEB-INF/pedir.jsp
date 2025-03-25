@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,16 +57,25 @@
             margin-bottom: 15px;
             text-align: center;
             cursor: pointer;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-height: 200px; /* Altura fija para todas las casillas */
+            background-size: cover;
+            background-position: center;
         }
 
-        .weed-type:hover {
-            background-color: #ffe6d7; /* Color claro al pasar el mouse */
+        .weed-type-content {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para legibilidad */
+            padding: 10px;
+            border-radius: 5px;
         }
 
+        /* Eliminar el estilo de imagen anterior */
         .weed-type img {
-            max-width: 80px; /* Tamaño de la imagen */
-            margin-bottom: 10px;
+            display: none;
         }
 
         .btn-primary {
@@ -126,30 +136,35 @@
             </div>
             
             <div class="form-group">
-                <label><i class="fas fa-leaf mr-2"></i> Genetica:</label><br>
-                
-                <div class="weed-type" id="Tropicana" onclick="selectWeedType('Tropicana')">
-                    <img src="${pageContext.request.contextPath}/img/Weed1.jpeg" alt="Tropicana">
-                    <p>Tropicana</p>
-                </div>
-                
-                <div class="weed-type" id="MobyDick" onclick="selectWeedType('Moby Dick')">
-                    <img src="${pageContext.request.contextPath}/img/Weed2.jpeg" alt="Moby Dick">
-                    <p>Moby Dick</p>
-                </div>
-                
-                <div class="weed-type" id="AK47" onclick="selectWeedType('AK47')">
-                    <img src="${pageContext.request.contextPath}/img/Weed3.jpeg" alt="AK47">
-                    <p>AK-47</p>
-                </div>
-
-                <input type="hidden" id="saborEmpanada" name="saborEmpanada" required> <!-- Campo oculto para el tipo de weed -->
-                
+                <label for="whatsapp"><i class="fab fa-whatsapp mr-2"></i> WhatsApp:</label>
+                <input type="tel" class="form-control" id="whatsapp" name="whatsapp"
+                       pattern="[0-9]{10,15}" placeholder="Ej: 1133445566" required>
             </div>
 
             <div class="form-group">
-                <label for="cantidad"><i class="fas fa-sort-numeric-up-alt mr-2"></i> Cantidad (gramos):</label>
-                <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" required>
+                <label><i class="fas fa-leaf mr-2"></i> Genetica:</label><br>
+
+                <div class="row">
+                    <c:forEach items="${geneticas}" var="genetica">
+                        <div class="col-md-4 mb-3"> <!-- 3 columnas por fila en pantallas medianas -->
+                            <div class="weed-type" 
+                                 style="background-image: url('${pageContext.request.contextPath}/img/Weed${genetica.id}.jpeg');">
+                                <div class="weed-type-content">
+                                    <p class="h5">${genetica.nombre}</p>
+                                    <p class="text-success font-weight-bold">
+                                        $<fmt:formatNumber value="${genetica.precio}" maxFractionDigits="0" />/gr
+                                    </p>
+                                    <input type="number" 
+                                           class="form-control form-control-sm" 
+                                           name="geneticaCantidades['${genetica.id}']" 
+                                           min="0" 
+                                           value="0"
+                                           style="max-width: 100px; margin: 0 auto;">
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
 
             <button type="submit" class="btn btn-primary"><i class="fas fa-check mr-2"></i> Hacer Pedido</button>

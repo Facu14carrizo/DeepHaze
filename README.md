@@ -7,7 +7,7 @@ Esta aplicación web está diseñada para gestionar y facilitar la venta de cann
 ## Demo
 
 ### Vista del Comprador
-![Demo Comprador](src/main/resources/demo/vistaComprador.gif)
+<img src="src/main/resources/demo/vistaComprador.gif" alt="Demo Comprador" width="300" />
 
 El comprador puede:
 - Dejar su número de WhatsApp para ser directamente contactado.
@@ -16,7 +16,7 @@ El comprador puede:
 - Registrar pedido de forma rápida y flexible.
 
 ### Vista del Vendedor
-![Demo Vendedor](src/main/resources/demo/vistaVendedor.gif)
+<img src="src/main/resources/demo/vistaVendedor.gif" alt="Demo Vendedor" width="300" />
 
 El vendedor puede:
 - Administrar variedades de genéticas, modificarlas o agregar nuevas.
@@ -61,7 +61,7 @@ El uso de esta aplicación debe realizarse siempre en cumplimiento de las normat
 
 ## Licencia
 
-Este proyecto se distribuye bajo la licencia MIT. Consulte el archivo LICENSE para más detalles.
+Este proyecto se distribuye bajo la licencia MIT.
 
 ---
 

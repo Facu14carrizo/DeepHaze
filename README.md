@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Esta aplicación web está diseñada para gestionar y facilitar la venta de cannabis de uso recreativo en jurisdicciones donde su consumo y comercialización están permitidos por la ley. El sistema permite a los usuarios realizar pedidos, gestionar variedades (genéticas), precios y administrar los pedidos recibidos de manera eficiente y segura.
+Esta plataforma facilita la administración de productos, pedidos y clientes, brindando una solución segura, eficiente y transparente para pequeños comercios del sector. El proyecto está orientado al cumplimiento normativo, promoviendo un uso responsable y exclusivamente recreativo, sin fomentar actividades ilegales. Construida con tecnologías Java, SpringBoot y MySQL, es una herramienta práctica para digitalizar y profesionalizar la venta en este mercado emergente.
 
 ## Demo
 

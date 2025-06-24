@@ -2,12 +2,12 @@
 
 ## Descripción
 
-Esta aplicación web está diseñada para gestionar y facilitar la venta de cannabis de uso recreativo en jurisdicciones donde su consumo y comercialización están permitidos por la ley. El sistema permite a los usuarios realizar pedidos, gestionar variedades (genéticas), precios y administrar los pedidos recibidos de manera eficiente y segura.
+Esta plataforma facilita la administración de productos, pedidos y clientes, brindando una solución segura, eficiente y transparente para pequeños comercios del sector. El proyecto está orientado al cumplimiento normativo, promoviendo un uso responsable y exclusivamente recreativo, sin fomentar actividades ilegales. Construida con tecnologías Java, SpringBoot y MySQL, es una herramienta práctica para digitalizar y profesionalizar la venta en este mercado emergente.
 
 ## Demo
 
 ### Vista del Comprador
-![Demo Comprador](src/main/resources/demo/vistaComprador.gif)
+<img src="src/main/resources/demo/vistaComprador.gif" alt="Demo Comprador" width="300" />
 
 El comprador puede:
 - Dejar su número de WhatsApp para ser directamente contactado.
@@ -16,7 +16,7 @@ El comprador puede:
 - Registrar pedido de forma rápida y flexible.
 
 ### Vista del Vendedor
-![Demo Vendedor](src/main/resources/demo/vistaVendedor.gif)
+<img src="src/main/resources/demo/vistaVendedor.gif" alt="Demo Vendedor" width="300" />
 
 El vendedor puede:
 - Administrar variedades de genéticas, modificarlas o agregar nuevas.
@@ -61,7 +61,7 @@ El uso de esta aplicación debe realizarse siempre en cumplimiento de las normat
 
 ## Licencia
 
-Este proyecto se distribuye bajo la licencia MIT. Consulte el archivo LICENSE para más detalles.
+Este proyecto se distribuye bajo la licencia MIT.
 
 ---
 
